@@ -20,6 +20,12 @@ describe('Profile Component test', () => {
       name: /display details/i,
     });
 
-    expect(displayDetailsBtn).toBeTruthy();
+    expect(displayDetailsBtn).toBeInTheDocument();
+
+    const removedHideDetailsBtn = screen.queryByRole('button', {
+      name: /hide details/i,
+    });
+
+    expect(removedHideDetailsBtn).not.toBeInTheDocument();
   });
 });
