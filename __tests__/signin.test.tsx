@@ -1,7 +1,7 @@
 import SignIn from '@/pages/signin';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-describe('aa', () => {
+describe('Sign In', () => {
   beforeAll(() => {
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
@@ -17,7 +17,7 @@ describe('aa', () => {
       })),
     });
   });
-  it('Login, given credentials, returns enabled submit button', () => {
+  it('Sign in, given credentials, returns enabled submit button', () => {
     render(<SignIn />);
     const username = screen.getByRole('textbox', { name: /username/i });
     const password = screen.getByLabelText(/password/i);
@@ -27,10 +27,11 @@ describe('aa', () => {
       username: 'test user',
       password: '123password',
     };
+    // expect(loginBtn.hasAttribute('disable')).toBe(true);
+    // expect(loginBtn).not.toBeDisabled();
     fireEvent.change(username, { target: { value: fakeData.username } });
     fireEvent.change(password, { target: { value: fakeData.password } });
     fireEvent.click(rememberMe);
-    //expect(loginBtn.hasAttribute('disabled')).toBe(false);
     expect(loginBtn).not.toBeDisabled();
     // expect(screen.getByTestId('form')).toHaveFormValues({
     //   username: fakeData.username,
