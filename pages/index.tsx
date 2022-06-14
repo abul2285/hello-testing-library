@@ -1,13 +1,6 @@
-import Profile from '@/components/Profile/Profile';
 import Container from '@/components/Container/Container';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-
-const user = {
-  name: 'Abul Hossain',
-  title: 'Developer at dorik',
-  details: 'I Love React',
-};
 
 export default function Home() {
   return (
@@ -19,8 +12,6 @@ export default function Home() {
       </Head>
       <Container>
         <h1>Hello world</h1>
-
-        <Profile name={user.name} title={user.title} details={user.details} />
       </Container>
     </div>
   );
