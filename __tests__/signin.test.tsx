@@ -19,6 +19,7 @@ describe('Sign In', () => {
   });
   it('Sign in, given credentials, returns enabled submit button', () => {
     render(<SignIn />);
+
     const username = screen.getByRole('textbox', { name: /username/i });
     const password = screen.getByLabelText(/password/i);
     const rememberMe = screen.getByRole('checkbox');

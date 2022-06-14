@@ -29,9 +29,9 @@ const SignIn = () => {
             }
           />
         </Form.Item>
-        <Form.Item name='rememberMe'>
-          <Checkbox>Remember Me</Checkbox>
-        </Form.Item>
+
+        <Checkbox name='rememberMe'>Remember Me</Checkbox>
+
         <Button
           type='primary'
           block
